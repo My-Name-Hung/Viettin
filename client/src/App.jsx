@@ -5,7 +5,7 @@ function App() {
   return (
     <div>
       <Navbar />
-      <h1>First</h1>
+      <section></section>
     </div>
   );
 }
