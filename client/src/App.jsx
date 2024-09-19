@@ -1,10 +1,11 @@
 import { NextUIProvider } from "@nextui-org/react";
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { ParallaxProvider } from "react-scroll-parallax";
 import "./App.css";
 
 // Import component
-import Home from "./Component/Home/Home";
+import Home from "./Component/Trang-chu/Home/Home";
 
 //Create Router
 const router = createBrowserRouter([
@@ -21,7 +22,9 @@ const router = createBrowserRouter([
 function App() {
   return (
     <NextUIProvider>
-      <RouterProvider router={router} />
+      <ParallaxProvider>
+        <RouterProvider router={router} />
+      </ParallaxProvider>
     </NextUIProvider>
   );
 }

@@ -1,0 +1,257 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+.typing-animation {
+  overflow: hidden;
+  border-right: 0.15em solid orange; /* Typing cursor */
+  word-break: break-word;
+}
+.typing-animation span {
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+.typing-animation .char-1 {
+  animation-delay: 0.08s;
+  animation-name: colorChange;
+}
+.typing-animation .char-2 {
+  animation-delay: 0.16s;
+  animation-name: colorChange;
+}
+.typing-animation .char-3 {
+  animation-delay: 0.24s;
+  animation-name: colorChange;
+}
+.typing-animation .char-4 {
+  animation-delay: 0.32s;
+  animation-name: colorChange;
+}
+.typing-animation .char-5 {
+  animation-delay: 0.4s;
+  animation-name: colorChange;
+}
+.typing-animation .char-6 {
+  animation-delay: 0.48s;
+  animation-name: colorChange;
+}
+.typing-animation .char-7 {
+  animation-delay: 0.56s;
+  animation-name: colorChange;
+}
+.typing-animation .char-8 {
+  animation-delay: 0.64s;
+  animation-name: colorChange;
+}
+.typing-animation .char-9 {
+  animation-delay: 0.72s;
+  animation-name: colorChange;
+}
+.typing-animation .char-10 {
+  animation-delay: 0.8s;
+  animation-name: colorChange;
+}
+.typing-animation .char-11 {
+  animation-delay: 0.88s;
+  animation-name: colorChange;
+}
+.typing-animation .char-12 {
+  animation-delay: 0.96s;
+  animation-name: colorChange;
+}
+.typing-animation .char-13 {
+  animation-delay: 1.04s;
+  animation-name: colorChange;
+}
+.typing-animation .char-14 {
+  animation-delay: 1.12s;
+  animation-name: colorChange;
+}
+.typing-animation .char-15 {
+  animation-delay: 1.2s;
+  animation-name: colorChange;
+}
+.typing-animation .char-16 {
+  animation-delay: 1.28s;
+  animation-name: colorChange;
+}
+.typing-animation .char-17 {
+  animation-delay: 1.36s;
+  animation-name: colorChange;
+}
+.typing-animation .char-18 {
+  animation-delay: 1.44s;
+  animation-name: colorChange;
+}
+.typing-animation .char-19 {
+  animation-delay: 1.52s;
+  animation-name: colorChange;
+}
+.typing-animation .char-20 {
+  animation-delay: 1.6s;
+  animation-name: colorChange;
+}
+.typing-animation .char-21 {
+  animation-delay: 1.68s;
+  animation-name: colorChange;
+}
+.typing-animation .char-22 {
+  animation-delay: 1.76s;
+  animation-name: colorChange;
+}
+.typing-animation .char-23 {
+  animation-delay: 1.84s;
+  animation-name: colorChange;
+}
+.typing-animation .char-24 {
+  animation-delay: 1.92s;
+  animation-name: colorChange;
+}
+.typing-animation .char-25 {
+  animation-delay: 2s;
+  animation-name: colorChange;
+}
+.typing-animation .char-26 {
+  animation-delay: 2.08s;
+  animation-name: colorChange;
+}
+.typing-animation .char-27 {
+  animation-delay: 2.16s;
+  animation-name: colorChange;
+}
+.typing-animation .char-28 {
+  animation-delay: 2.24s;
+  animation-name: colorChange;
+}
+.typing-animation .char-29 {
+  animation-delay: 2.32s;
+  animation-name: colorChange;
+}
+.typing-animation .char-30 {
+  animation-delay: 2.4s;
+  animation-name: colorChange;
+}
+.typing-animation .char-31 {
+  animation-delay: 2.48s;
+  animation-name: colorChange;
+}
+.typing-animation .char-32 {
+  animation-delay: 2.56s;
+  animation-name: colorChange;
+}
+.typing-animation .char-33 {
+  animation-delay: 2.64s;
+  animation-name: colorChange;
+}
+.typing-animation .char-34 {
+  animation-delay: 2.72s;
+  animation-name: colorChange;
+}
+.typing-animation .char-35 {
+  animation-delay: 2.8s;
+  animation-name: colorChange;
+}
+.typing-animation .char-36 {
+  animation-delay: 2.88s;
+  animation-name: colorChange;
+}
+.typing-animation .char-37 {
+  animation-delay: 2.96s;
+  animation-name: colorChange;
+}
+.typing-animation .char-38 {
+  animation-delay: 3.04s;
+  animation-name: colorChange;
+}
+.typing-animation .char-39 {
+  animation-delay: 3.12s;
+  animation-name: colorChange;
+}
+.typing-animation .char-40 {
+  animation-delay: 3.2s;
+  animation-name: colorChange;
+}
+.typing-animation .char-41 {
+  animation-delay: 3.28s;
+  animation-name: colorChange;
+}
+.typing-animation .char-42 {
+  animation-delay: 3.36s;
+  animation-name: colorChange;
+}
+.typing-animation .char-43 {
+  animation-delay: 3.44s;
+  animation-name: colorChange;
+}
+.typing-animation .char-44 {
+  animation-delay: 3.52s;
+  animation-name: colorChange;
+}
+.typing-animation .char-45 {
+  animation-delay: 3.6s;
+  animation-name: colorChange;
+}
+.typing-animation .char-46 {
+  animation-delay: 3.68s;
+  animation-name: colorChange;
+}
+.typing-animation .char-47 {
+  animation-delay: 3.76s;
+  animation-name: colorChange;
+}
+.typing-animation .char-48 {
+  animation-delay: 3.84s;
+  animation-name: colorChange;
+}
+.typing-animation .char-49 {
+  animation-delay: 3.92s;
+  animation-name: colorChange;
+}
+.typing-animation .char-50 {
+  animation-delay: 4s;
+  animation-name: colorChange;
+}
+
+.show-subtitle {
+  opacity: 1 !important;
+}
+
+.company-name {
+  font-weight: bold;
+  color: #ffd700; /* Gold color */
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.8); /* Glow effect */
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes colorChange {
+  0%, 100% {
+    color: #2980b9;
+  }
+  50% {
+    color: #6dd5fa;
+  }
+}
+.animate-bounce {
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-5px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}/*# sourceMappingURL=Carousels.css.map */
