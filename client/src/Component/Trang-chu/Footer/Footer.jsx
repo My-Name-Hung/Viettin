@@ -321,7 +321,7 @@ function Footer() {
                         target="_blank"
                         title="OneValue"
                       >
-                        OneValue
+                        OneValue.com.vn
                       </a>
                     </li>
                   </ul>

@@ -102,7 +102,7 @@ function Thank() {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/appraisal-request",
+        "https://viettin-be.onrender.com/api/appraisal-request",
         {
           method: "POST",
           headers: {
@@ -169,7 +169,7 @@ function Thank() {
               </Button>
 
               {/* The Modal component */}
-              <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
+              <Modal className="h-[29rem]" isOpen={isOpen} onOpenChange={onOpenChange}>
                 <ModalContent>
                   {(onClose) => (
                     <>

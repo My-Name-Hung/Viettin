@@ -6,7 +6,7 @@ import "./App.css";
 
 // Import component
 import Home from "./Component/Trang-chu/Home/Home";
-
+import VeVietTin from "./Component/Gioi-thieu/Ve-Viet-Tin/VeVietTin.jsx"
 //Create Router
 const router = createBrowserRouter([
   {
@@ -14,6 +14,14 @@ const router = createBrowserRouter([
     element: (
       <div>
         <Home />
+      </div>
+    ),
+  },
+  {
+    path: "/ve-chung-toi",
+    element: (
+      <div>
+        <VeVietTin />
       </div>
     ),
   },
