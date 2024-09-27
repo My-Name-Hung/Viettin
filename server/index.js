@@ -10,7 +10,8 @@ app.use(bodyParser.json());
 const cors = require("cors");
 app.use(
   cors({
-    origin: "https://viettin.netlify.app", // Vite dev server URL
+    origin: ["https://viettin.netlify.app", "http://localhost:5173"], // Vite dev server URL
+    default: "https://viettin.netlify.app"
   })
 );
 
