@@ -11,7 +11,6 @@ const cors = require("cors");
 app.use(
   cors({
     origin: ["https://viettin.netlify.app", "http://localhost:5173"], // Vite dev server URL
-    default: "https://viettin.netlify.app"
   })
 );
 
