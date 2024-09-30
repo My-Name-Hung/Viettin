@@ -47,19 +47,19 @@ app.post("/api/appraisal-request", async (req, res) => {
   }
 });
 
-// API endpoint to fetch all branches with details
-app.get("/api/branches", async (req, res) => {
-  try {
-    const result = await pool.query("SELECT * FROM CN"); // Fetch all branches from 'CN' table
-    res.status(200).json(result.rows); // Send the branch data as a JSON response
-  } catch (error) {
-    console.error("Error fetching branches:", error);
-    res.status(500).json({
-      message: "Internal Server Error",
-      error: error.message,
-    });
-  }
-});
+// // API endpoint to fetch all branches with details
+// app.get("/api/branches", async (req, res) => {
+//   try {
+//     const result = await pool.query("SELECT * FROM CN"); // Fetch all branches from 'CN' table
+//     res.status(200).json(result.rows); // Send the branch data as a JSON response
+//   } catch (error) {
+//     console.error("Error fetching branches:", error);
+//     res.status(500).json({
+//       message: "Internal Server Error",
+//       error: error.message,
+//     });
+//   }
+// });
 
 
 // Start server
