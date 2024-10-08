@@ -1,9 +1,8 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./Footer.css";
 
 // import assets
 import logo from "../../../assets/Logo.png";
-import logoGOV from "../../../assets/Footer/logoGov.jpg";
 
 function Footer() {
   // Dropdown menu
@@ -34,7 +33,7 @@ function Footer() {
                         className="font-bold text-[#2c6aff]"
                         rel="nofollow"
                       >
-                        0901 866 906
+                        0901 866 906/907
                       </a>
                     </p>
                   </div>
@@ -44,48 +43,14 @@ function Footer() {
                     <i className="zmdi zmdi-phone"></i>
                   </div>
                   <div className="detail">
-                    <p className="title">Khiếu nại, phản hồi</p>
+                    <p className="title">Hotline</p>
                     <p className="link">
                       <a
-                        href="tel:0901 866 909"
+                        href="tel:0983454769"
                         rel="nofollow"
                         className="font-bold text-[#2c6aff]"
                       >
-                        0901 866 909
-                      </a>
-                    </p>
-                  </div>
-                </li>
-                <li className="item">
-                  <div className="icon">
-                    <i className="zmdi zmdi-phone"></i>
-                  </div>
-                  <div className="detail">
-                    <p className="title">Bộ phận kinh doanh</p>
-                    <p className="link">
-                      <a
-                        href="tel:02862753541"
-                        rel="nofollow"
-                        className="font-bold text-[#2c6aff]"
-                      >
-                        028 627 535 41-42-43
-                      </a>
-                    </p>
-                  </div>
-                </li>
-                <li className="item">
-                  <div className="icon">
-                    <i className="zmdi zmdi-phone"></i>
-                  </div>
-                  <div className="detail">
-                    <p className="title">Phòng dự án</p>
-                    <p className="link">
-                      <a
-                        href="tel:0983 454 769"
-                        rel="nofollow"
-                        className="font-bold text-[#2c6aff]"
-                      >
-                        0983 454 769
+                        0983 454 769 <br/> 0901 866 909
                       </a>
                     </p>
                   </div>
@@ -154,21 +119,6 @@ function Footer() {
                       support@viettinvaluation.com
                     </a>
                   </p>
-                  <a
-                    className="gov"
-                    href="/"
-                    rel="nofollow"
-                    // target="_blank"
-                    title="Bộ công thương"
-                  >
-                    <img
-                      data-src={logoGOV}
-                      className=" lazied"
-                      alt="Công ty Cổ phần Thẩm định giá Việt Tín"
-                      data-lazied="IMG"
-                      src={logoGOV}
-                    />
-                  </a>
                 </li>
                 <li className={expandedMenus["mn-01"] ? "expanded" : ""}>
                   <span
@@ -184,7 +134,7 @@ function Footer() {
                   </span>
                   <ul id="mn-01" className="flex">
                     <li className="hover:text-[#2c6aff]">
-                      <a href="/gioi-thieu" title="Về VietTin">
+                      <a href="/ve-chung-toi" title="Về VietTin">
                         Về Việt Tín
                       </a>
                     </li>
@@ -194,7 +144,7 @@ function Footer() {
                       </a>
                     </li>
                     <li className="hover:text-[#2c6aff]">
-                      <a href="/doi-ngu" rel="nofollow" title="Tin tức">
+                      <a href="/tin-tuc" rel="nofollow" title="Tin tức">
                         Tin tức
                       </a>
                     </li>
@@ -300,6 +250,15 @@ function Footer() {
                         title="Quy trình thanh toán"
                       >
                         Quy trình thanh toán
+                      </a>
+                    </li>
+                    <li className="hover:text-[#2c6aff]">
+                      <a
+                        href="/quy-trinh-khieu-nai"
+                        rel="nofollow"
+                        title="Quy trình khiếu nại"
+                      >
+                        Quy trình khiếu nại
                       </a>
                     </li>
                   </ul>

@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Carousels.css";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 //import assets
 // video
@@ -15,7 +17,7 @@ import { IoIosArrowRoundDown } from "react-icons/io";
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
 
 // import component
-import { Button, Link } from "@nextui-org/react";
+import { Button, Image, Link } from "@nextui-org/react";
 import { Parallax, ParallaxBanner } from "react-scroll-parallax";
 
 function Carousels() {
@@ -136,7 +138,7 @@ function Carousels() {
 
         <div className="flex relative z-10 items-center w-full h-full justify-center p-[10vh_0]">
           <div className="w-[80%] max-w-[16rem] h-auto">
-            <img src={image1} alt="Hình ảnh định giá OV" />
+            <Image src={image1} alt="Hình ảnh định giá OV" />
           </div>
         </div>
 
@@ -145,7 +147,7 @@ function Carousels() {
             <h1 className="font-['Quicksand'] text-[25px] font-bold">
               Nền tảng định giá tự động
             </h1>
-            <h2 className="font-['Quicksand'] text-[25px] font-light text-blue-600">
+            <h2 className="font-['Quicksand'] text-[25px] font-light text-[#2648b5]">
               dành cho ngân hàng và doanh nghiệp
             </h2>
 
@@ -158,10 +160,9 @@ function Carousels() {
 
             <Link href="https://onevalue.com.vn/bat-dong-san">
               <Button
-                color="primary"
                 endContent={<IoArrowForwardCircleOutline />}
                 radius="lg"
-                className="mt-4"
+                className="bg-[#2648b5] text-white mt-4"
               >
                 Tìm hiểu ngay
               </Button>
@@ -172,7 +173,7 @@ function Carousels() {
         <Parallax speed={20}>
           <div className="flex relative z-10 items-center justify-center p-[5vh_0]">
             <div className="w-[90%] max-w-[50rem] h-auto">
-              <img src={image2} alt="Hình ảnh bản đồ dự án OV" />
+              <Image src={image2} alt="Hình ảnh bản đồ dự án OV" />
             </div>
           </div>
         </Parallax>
@@ -182,7 +183,7 @@ function Carousels() {
             <h1 className="font-['Quicksand'] text-[25px] font-bold">
               Định hình vị trí dự án
             </h1>
-            <h2 className="font-['Quicksand'] text-[25px] font-light text-blue-600">
+            <h2 className="font-['Quicksand'] text-[25px] font-light text-[#2648b5]">
               dành cho các thẩm định viên bất động sản
             </h2>
 
@@ -194,10 +195,9 @@ function Carousels() {
 
             <Link href="https://onevalue.com.vn/bat-dong-san">
               <Button
-                color="primary"
                 endContent={<IoArrowForwardCircleOutline />}
                 radius="lg"
-                className="mt-4"
+                className="bg-[#2648b5] text-white mt-4"
               >
                 Tìm hiểu ngay
               </Button>
@@ -205,20 +205,20 @@ function Carousels() {
           </div>
         </Parallax>
 
-        <Parallax speed={40}>
+        <Parallax speed={30}>
           <div className="flex relative z-10 items-center justify-center pt-[5vh]">
             <div className="w-[90%] max-w-[26rem] h-auto">
-              <img src={image3} alt="Hình ảnh thông tin chi tiết dự án OV" />
+              <Image src={image3} alt="Hình ảnh thông tin chi tiết dự án OV" />
             </div>
           </div>
         </Parallax>
 
-        <Parallax speed={50} scale={[0.6, 1.2]}>
+        <Parallax speed={40} scale={[0.6, 1.2]}>
           <div className="relative z-10 flex flex-col items-center w-full h-full pt-[5vh] text-center">
             <h1 className="font-['Quicksand'] text-[25px] font-bold">
               Cung cấp thông tin chi tiết dự án
             </h1>
-            <h2 className="font-['Quicksand'] text-[25px] font-light text-blue-600">
+            <h2 className="font-['Quicksand'] text-[25px] font-light text-[#2648b5]">
               dành cho các thẩm định viên bất động sản
             </h2>
 
@@ -230,10 +230,9 @@ function Carousels() {
 
             <Link href="https://onevalue.com.vn/bat-dong-san">
               <Button
-                color="primary"
                 endContent={<IoArrowForwardCircleOutline />}
                 radius="lg"
-                className="mt-4"
+                className="bg-[#2648b5] text-white mt-4"
               >
                 Tìm hiểu ngay
               </Button>

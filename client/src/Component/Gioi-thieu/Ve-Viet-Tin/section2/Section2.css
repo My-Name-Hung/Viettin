@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+* {
+  font-family: "Quicksand";
+}
+
+.Item {
+  position: relative;
+  overflow: hidden;
+}
+
+.Item:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: solid 4px #00504c;
+  opacity: 20%;
+  width: 100%;
+}
+
+.ButtonItem {
+  position: relative;
+  overflow: hidden;
+}
+
+.ButtonItem:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: solid 4px #00504c;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+
+.ButtonItem:hover:after {
+  transform: scaleX(1);
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .Item button {
+    font-size: 14px;
+  }
+
+  .Item:after {
+    left: 0;
+    width: 100%;
+  }
+
+  .ButtonItem {
+    padding: 0.5rem;
+  }
+
+  .text-center p {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .Item button {
+    font-size: 16px;
+  }
+
+  .Item:after {
+    left: 0;
+    width: 100%;
+  }
+
+  .ButtonItem {
+    padding: 1rem;
+  }
+
+  .text-center p {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .Item button {
+    font-size: 18px;
+  }
+
+  .Item:after {
+    left: 0;
+    width: 100%;
+  }
+  .ButtonItem {
+    padding: 1.5rem;
+  }
+
+  .text-center p {
+    font-size: 16px;
+  }
+}

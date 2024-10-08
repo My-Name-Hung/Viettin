@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+* {
+  font-family: "Quicksand";
+}
+
+/* Section2.css */
+
+
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+}
+
+/* Custom marker icon and label styling */
+.custom-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.marker-icon {
+  width: 30px;
+  height: 40px; /* Adjust this to your marker image size */
+}
+
+.marker-label {
+  margin-top: 5px; /* Space between the icon and label */
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  color: black;
+  background-color: white;
+  border-radius: 3px;
+}

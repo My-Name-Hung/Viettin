@@ -152,12 +152,11 @@ function Thank() {
               </h1>
             </Parallax>
             <Parallax speed={-5} opacity={[0.7, 1]} translateY={[20, 0]}>
-              <p className="font-['Quicksand'] mt-4 text-lg md:text-2xl text-white animate-fade-in-up delay-500">
-                Đáp ứng sự tin tưởng và ủng hộ của Quý khách hàng dành cho Viet
-                Tin Valuation, Hội đồng Quản trị, Ban Giám đốc cùng toàn thể Cán
-                bộ nhân viên Viet Tin Valuation trân trọng gửi đến Quý khách
+              <p className="font-['Quicksand'] px-2 mt-4 text-lg md:text-2xl text-white animate-fade-in-up delay-500">
+                Đáp ứng sự tin tưởng và ủng hộ của Quý khách hàng dành cho VietTin Valuation, Hội đồng Quản trị, Ban Giám đốc cùng toàn thể Cán
+                bộ nhân viên VietTin Valuation trân trọng gửi đến Quý khách
                 hàng lời cam kết về giữ vững và nâng cao chất lượng dịch vụ trên
-                chặng đường phát triển của Viet Tin Valuation expectations.
+                chặng đường phát triển của VietTin Valuation.
               </p>
               <Button
                 color="primary"

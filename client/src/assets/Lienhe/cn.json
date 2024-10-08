@@ -1,0 +1,200 @@
+[
+  {
+    "provide": "Hà Nội",
+    "name": "Chi nhánh Hà Nội",
+    "address": "Tầng 2, tòa nhà ACCI, số 210 Lê Trọng Tấn, phường Khương Mai, quận Thanh Xuân, Thành phố Hà Nội",
+    "persion": "Bà Nguyễn Thị Thúy",
+    "brand": "Giám đốc CN Hà Nội",
+    "tel": "0988 962 964",
+    "mail": "cn.hanoi@viettinvaluation.com",
+    "latitude": 21.05977381,
+    "longitude": 105.8225476
+  },
+  {
+    "provide": "Quãng Ngãi",
+    "name": "Chi nhánh Quãng Ngãi",
+    "address": "279 đường Trần Quang Khải, tổ 8, phường Chánh Lộ, thành phố Quảng Ngãi, tỉnh Quảng Ngãi",
+    "persion": "Bà Lê Ngọc Hoài Vân",
+    "brand": "Giám đốc CN Quãng Ngãi",
+    "tel": "0915 015 769",
+    "mail": "cn.quangngai@viettinvaluation.com",
+    "latitude": 15.17809612,
+    "longitude": 108.8156177
+  },
+  {
+    "provide": "Vĩnh Long",
+    "name": "Chi nhánh Vĩnh Long",
+    "address": "Lầu 1, 80 Phó Cơ Điều, Khóm 4, Phường 3, Thành phố Vĩnh Long",
+    "persion": "Ông Dương Trường Lâm",
+    "brand": "Giám đốc chi nhánh Vĩnh Long",
+    "tel": "0902 722 114",
+    "mail": "cn.vinhlong@viettinvaluation.com",
+    "latitude": 10.23149105,
+    "longitude": 105.8775971
+  },
+  {
+    "provide": "Trà Vinh",
+    "name": "Chi nhánh Trà Vinh",
+    "address": "Số 116 Kiên Thị Nhẫn, Khóm 2, Phường 3,thành phố Trà Vinh, tỉnh Trà Vinh",
+    "persion": "Ông Dương Trường Lâm",
+    "brand": "Giám đốc chi nhánh Trà Vinh",
+    "tel": "0902 722 114",
+    "mail": "cn.travinh@viettinvaluation.com",
+    "latitude": 9.955936622,
+    "longitude": 106.3318058
+  },
+  {
+    "provide": "Long An",
+    "name": "Chi nhánh Long An",
+    "address": "Số H-06, đường số 1, khu dân cư - khu Hành chính tỉnh, Phường 6, Thành phố Tân An, tỉnh Long An",
+    "persion": "Ông Nguyễn Minh Nhựt",
+    "brand": "Giám đốc chi nhánh Long An",
+    "tel": "0918 128 028",
+    "mail": "cn.longan@viettinvaluation.com",
+    "latitude": 10.53781961,
+    "longitude": 106.4034633
+  },
+  {
+    "provide": "Đồng Tháp",
+    "name": "Chi nhánh Đồng Tháp",
+    "address": "Số 30 Nguyễn Văn Tiệp, phường Phú Mỹ, thành phố Cao Lãnh, tỉnh Đồng Tháp",
+    "persion": "Ông Dương Trường Lâm",
+    "brand": "Giám đốc CN Đồng Tháp",
+    "tel": "0902 722 114",
+    "mail": "cn.dongthap@viettinvaluation.com",
+    "latitude": 10.4601165,
+    "longitude": 105.6332695
+  },
+  {
+    "provide": "Tây Ninh",
+    "name": "Văn phòng đại diện Tây Ninh",
+    "address": "Số 08, đường Hàm Nghi, Phường 3, Quận 2, thành phố Tây Ninh, tỉnh Tây Ninh",
+    "persion": "Ông Nguyễn Duy Nhân",
+    "brand": "Giám đốc, Trường VP đại diện Tây Ninh",
+    "tel": "0908 068 011",
+    "mail": "vptayninh@viettinvaluation.com",
+    "latitude": 11.33549581,
+    "longitude": 106.1033477
+  },
+  {
+    "provide": "Bảo Lộc",
+    "name": "Văn phòng đại diện Bảo Lộc",
+    "address": "Số 1197 Trần Phú, phường Lộc Tiến, thành phố Bảo Lộc, tỉnh Lâm Đồng",
+    "persion": "Ông Nguyễn Công Lượng",
+    "brand": "Trưởng VP đại diện Bảo Lộc",
+    "tel": "0988 518 316",
+    "mail": "vpbaoloc@viettinvaluation.com",
+    "latitude": 11.57084789,
+    "longitude": 107.829814
+  },
+  {
+    "provide": "Bến Tre",
+    "name": "Văn phòng đại diện Bến Tre",
+    "address": "Số 200K, đường số 1, Khu phố 3, phường Phú Tân, thành phố Bến Tre, tỉnh Bến Tre",
+    "persion": "Bà Nguyễn Trung Thảo Oanh",
+    "brand": "Phó Giám đốc,Trưởng VP đại diện Bến Tre",
+    "tel": "0983 454 769",
+    "mail": "vpbentre@viettinvaluation.com",
+    "latitude": 10.24370254,
+    "longitude": 106.3962515
+  },
+  {
+    "provide": "ĐắkLắk",
+    "name": "Văn phòng đại diện ĐắkLắk",
+    "address": "203 Hùng Vương, phường Tự An, thành phố Buôn Ma Thuột, tỉnh Đắk Lắk",
+    "persion": "Ông Bùi Tịnh Tấn",
+    "brand": "Trưởng VP đại diện Đắk Lắk",
+    "tel": "0947 201 095",
+    "mail": "vpdaklak@viettinvaluation.com",
+    "latitude": 12.65123258,
+    "longitude": 108.047419
+  },
+  {
+    "provide": "Huế",
+    "name": "Văn phòng đại diện Huế",
+    "address": "Tầng 4, số 72 Hai Bà Trưng, phường Vĩnh Ninh, thành phố Huế, tỉnh Thừa Thiên Huế",
+    "persion": "Ông Lê Ngọc Minh",
+    "brand": " Trưởng VP đại diện Huế",
+    "tel": "0905 660 660",
+    "mail": "vphue@viettinvaluation.com",
+    "latitude": 16.47278833,
+    "longitude": 107.5719097
+  },
+  {
+    "provide": "Đắk Nông",
+    "name": "Văn phòng đại diện Đắk Nông",
+    "address": "23 Phường Nghĩa Tân, thành phố Gia Nghĩa, tỉnh Đắk Nông",
+    "persion": "Ông Bùi Tịnh Tấn",
+    "brand": "Trưởng VP đại diện Đắk Nông",
+    "tel": "0947 201 095",
+    "mail": "vpdaknong@viettinvaluation.com",
+    "latitude": 12.00363142,
+    "longitude": 107.6726721
+  },
+  {
+    "provide": "Khánh Hòa",
+    "name": "Văn phòng đại diện Khánh Hòa",
+    "address": "Số 7 Võ Trứ, phường Phước Tiến, thành phố Nha Trang, tỉnh Khánh Hòa",
+    "persion": "Bà Trần Thị Thiên Kim",
+    "brand": "Trưởng VP đại diện Khánh Hòa",
+    "tel": "0914 053 993",
+    "mail": "vpkhanhhoa@viettinvaluation.com",
+    "latitude": 12.25352634,
+    "longitude": 109.1027566
+  },
+  {
+    "provide": "An Giang",
+    "name": "Văn phòng đại diện An Giang",
+    "address": "4482 đường Tôn Thất Thuyết, phường Bình Khánh, thành phố Long Xuyên, tỉnh An Giang",
+    "persion": "Bà Lê Thị Minh Nguyệt",
+    "brand": "Trưởng VP đại diện An Giang",
+    "tel": "0918 275 767",
+    "mail": "vpangiang@viettinvaluation.com",
+    "latitude": 10.47168372,
+    "longitude": 105.1869754
+  },
+  {
+    "provide": "Quãng Bình",
+    "name": "Văn phòng đại diện Quãng Bình",
+    "address": "354 đường Quang Trung, phường Ba Đồn, thị xã Ba Đồn, tỉnh Quảng Bình",
+    "persion": "Ông Trịnh Song Hào",
+    "brand": "Trưởng VP đại diện Quảng Bình",
+    "tel": "0913 772 880",
+    "mail": "vpquangbinh@viettinvaluation.com",
+    "latitude": 17.52552812,
+    "longitude": 106.3885938
+  },
+  {
+    "provide": "Vũng Tàu",
+    "name": "Văn phòng đại diện Vũng Tàu",
+    "address": "81 Lưu Hữu Phước, phường Thống Nhất, thành phố Vũng Tàu",
+    "persion": "Ông Nguyễn Quốc Quyền",
+    "brand": "Trưởng VP đại diện Vũng Tàu",
+    "tel": "0938 885 557",
+    "mail": "vpvungtau@viettinvaluation.com",
+    "latitude": 10.41008158,
+    "longitude": 107.1319721
+  },
+  {
+    "provide": "Bình Dương",
+    "name": "Văn phòng đại diện Bình Dương",
+    "address": "Thửa đất số 18 - Lô A6, KDC Hiệp Thành III, Hoàng Hoa Thám, phường Hiệp Thành, thành phố Thủ Dầu Một,tỉnh Bình Dương",
+    "persion": "Ông Hoàng Xuân Nghĩa",
+    "brand": "Trưởng VP đại diện Bình Dương",
+    "tel": "0901 866 909",
+    "mail": "vpbinhduong@viettinvaluation.com",
+    "latitude": 10.98673781,
+    "longitude": 106.6546869
+  },
+    {
+      "provide": "Bạc Liêu",
+      "name": "Văn phòng đại diện Bạc Liêu",
+      "address": "Số 97B/4 đường Trần Phú, khóm 2, phường 7, thành phố Bạc Liêu, tỉnh Bạc Liêu",
+      "persion": "Ông Trần Minh Trí",
+      "brand": "Trưởng VP đại diện Bạc Liêu",
+      "tel": "0907 527 972",
+      "mail": "vpbaclieu@viettinvaluation.com",
+      "latitude": 9.29344643847377,
+      "longitude": 105.72050925682065
+    }
+]

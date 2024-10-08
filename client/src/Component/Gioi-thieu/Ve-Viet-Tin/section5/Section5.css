@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+* {
+  font-family: "Quicksand";
+}
+
+.responsive-image {
+  max-width: 100%;  /* The image will take up the full width of its container */  
+  object-fit: contain;  /* Ensures the image fits inside its container without distortion */
+  border: 1px solid #ccc;  /* Optional: adds a border for visual distinction */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Optional: shadow for better presentation */
+}

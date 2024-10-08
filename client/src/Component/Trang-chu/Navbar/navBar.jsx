@@ -67,8 +67,8 @@ function navBar() {
         />
         <NavbarBrand>
           <img src={logo} className="h-[45px] w-[50px]" alt="Logo Viettin" />
-          <p className=" border-r-[1px] pr-1 pt-[14px] border-t-0 border-l-0 border-b-0 border-gray-400 h-12 hover:cursor-pointer font-extrabold text-inherit text-sm text-purple-800 hover:text-red-800">
-            <a href="/"></a>VIETTIN VALUATION
+          <p className=" border-r-[1px] pr-1 pt-[14px] border-t-0 border-l-0 border-b-0 border-gray-400 h-12 hover:cursor-pointer font-extrabold text-inherit text-sm text-[#2648b5] hover:text-red-800">
+            <a href="/">VIETTIN VALUATION</a>
           </p>
         </NavbarBrand>
       </NavbarContent>
@@ -82,8 +82,10 @@ function navBar() {
             <NavbarItem key={index}>
               <Link
                 id="NavbarItem"
-                className={`pt-[1.5rem] text-black inline-block justify-between px-1 text-sm flex-1 hover:rounded-sm hover:text-purple-900 hover:font-bold ${
-                  activeItem === item.path ? "" : ""
+                className={`pt-[1.5rem] text-black inline-block justify-between px-1 text-sm flex-1 hover:rounded-sm hover:text-[#233f98] hover:font-bold ${
+                  activeItem === item.path
+                    ? "text-[#233f98] font-bold active"
+                    : ""
                 }`}
                 color="foreground"
                 href={item.path}
@@ -140,7 +142,9 @@ function navBar() {
                 <Link
                   key={index}
                   href={item.path}
-                  className="block px-4 py-2 text-sm text-black hover:bg-gray-100 hover:text-purple-700"
+                  className={`block px-4 py-2 text-sm text-black hover:bg-gray-100 hover:font-bold hover:text-[#2648b5] ${
+                    activeItem === item.path ? "text-[#233f98] font-bold" : ""
+                  }`}
                 >
                   {item.label}
                 </Link>
@@ -149,7 +153,7 @@ function navBar() {
           )}
         </NavbarItem>
         <NavbarItem>
-          <span className="md:font-medium md:text-blue-700 md:text-sm hidden md:flex">
+          <span className="md:font-medium md:text-[#2648b5] md:text-sm hidden md:flex">
             <FiPhone className="h-5 w-4" />{" "}
             <a
               href="tel:0901866906"
@@ -157,7 +161,7 @@ function navBar() {
               type="button"
               className="pl-1"
             >
-              0901 866 906
+              0901 866 906/907
             </a>
           </span>
         </NavbarItem>
@@ -168,7 +172,7 @@ function navBar() {
             {item.label === "Tất cả dịch vụ" ? (
               <>
                 <Link
-                  className="w-full hover:text-yellow-800 hover:text-lg "
+                  className="w-full hover:font-bold text-black hover:text-[#2648b5] hover:text-lg"
                   onClick={toggleDropdown}
                 >
                   {item.label}
@@ -192,7 +196,11 @@ function navBar() {
                     {dropdownItems.map((dropdownItem, dropdownIndex) => (
                       <Link
                         key={dropdownIndex}
-                        className="block px-4 py-2 text-sm text-black hover:text-purple-600 hover:bg-gray-100"
+                        className={`block px-4 py-2 text-sm text-black hover:text-[#2648b5] hover:font-bold ${
+                          activeItem === dropdownItem.path
+                            ? "text-[#233f98] font-bold"
+                            : ""
+                        }`}
                         href={dropdownItem.path}
                       >
                         {dropdownItem.label}
@@ -206,7 +214,7 @@ function navBar() {
                 color={
                   index === 2 ? "" : index === menuItems.length - 1 ? "" : ""
                 }
-                className="w-full text-black hover:text-yellow-800 hover:text-lg"
+                className="w-full text-black hover:text-[#2648b5] hover:font-bold hover:text-lg"
                 href={item.path}
                 size="lg"
               >

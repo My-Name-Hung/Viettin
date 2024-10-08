@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+* {
+  font-family: "Quicksand";
+}
+
+.animate-bounce {
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-5px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Text animation: fade-in and slide-up */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Apply animations */
+.fade-in-animation {
+  animation: fadeIn 1.5s ease-in-out forwards;
+  opacity: 0; /* Ensure the element is initially hidden */
+}
+
+.fade-in-slide-up {
+  animation: fadeInUp 1.5s ease-in-out forwards;
+  animation-delay: 0.3s; /* Delay to create a staggered effect */
+  opacity: 0;
+}
+

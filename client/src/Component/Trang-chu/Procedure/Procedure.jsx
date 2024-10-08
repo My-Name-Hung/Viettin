@@ -45,7 +45,7 @@ function Procedure() {
           <div className="max-w-4xl mx-auto p-6 md:p-8 bg-white shadow-xl rounded-2xl relative z-10 overflow-hidden">
             {/* Decorative Elements */}
             <div className="absolute -top-10 -left-10 w-40 h-40 md:w-56 md:h-56 bg-blue-200 rounded-full opacity-20 pointer-events-none" />
-            <div className="absolute top-0 right-0 w-52 h-52 md:w-72 md:h-72 bg-orange-200 rounded-full opacity-20 pointer-events-none" />
+            <div className="absolute top-0 right-0 w-52 h-52 md:w-72 md:h-72 bg-[#ef6a0f] rounded-full opacity-20 pointer-events-none" />
 
             {/* Progress Bar */}
             <div className="flex justify-between mb-8 relative z-10">
@@ -53,14 +53,14 @@ function Procedure() {
                 <div key={index} className="flex-1">
                   <div
                     className={`h-2 rounded-lg  ${
-                      index <= currentStep ? "bg-orange-400" : "bg-gray-300"
+                      index <= currentStep ? "bg-[#ef6a0f]" : "bg-gray-300"
                     }`}
                     style={{ transition: "width 0.5s ease-in-out" }}
                   />
                   <p
                     className={`text-xs font-['Quicksand'] p-2 md:text-sm mt-2 ${
                       index === currentStep
-                        ? "text-blue-500 font-bold"
+                        ? "text-[#2648b5] font-bold"
                         : "text-gray-500"
                     }`}
                   >
@@ -79,14 +79,12 @@ function Procedure() {
               }}
             >
               {/* Animated Title */}
-              <h2 className="font-['Quicksand'] text-xl md:text-2xl font-bold text-blue-500 mb-4 animate-fadeInSlide">
+              <h2 className="font-['Quicksand'] text-xl md:text-2xl font-bold text-[#2648b5] mb-4 animate-fadeInSlide">
                 {steps[currentStep]}
               </h2>
 
               <p className="font-['Quicksand'] text-gray-600 mb-6 text-sm md:text-base">
-                {`${description[
-                  currentStep
-                ]}`}
+                {`${description[currentStep]}`}
               </p>
 
               {/* Navigation Buttons */}
@@ -99,7 +97,7 @@ function Procedure() {
                   Quay lại
                 </button>
                 <button
-                  className="font-['Quicksand'] bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4 md:px-6 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300"
+                  className="font-['Quicksand'] bg-orange-500 hover:bg-[#ef6a0f] text-white font-bold py-2 px-4 md:px-6 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300"
                   onClick={nextStep}
                   disabled={currentStep === steps.length - 1}
                 >

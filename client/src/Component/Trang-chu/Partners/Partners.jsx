@@ -1,4 +1,6 @@
 import React from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 // Import component
 import Slider from "react-slick";
@@ -228,10 +230,11 @@ function Partners() {
                   rel="noopener noreferrer"
                 >
                   <div className="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <img
+                    <LazyLoadImage
                       src={partner.logo}
                       alt={partner.name}
-                      className="mx-auto p-4 h-24 object-contain"
+                      className="mx-auto p-4 h-[6.5rem] object-contain"
+                      loading="lazy"
                     />
                   </div>
                 </a>

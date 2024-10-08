@@ -1,4 +1,6 @@
 import React from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 //Import Carousel
 import Slider from "react-slick";
@@ -10,6 +12,7 @@ import image1 from "../../../assets/project/du-an-water-bay.jpg"
 import image2 from "../../../assets/project/CHARM-CITY-39-1200x675.jpg";
 import image3 from "../../../assets/project/cong-ty-anh-nguyen.jpg";
 import image4 from "../../../assets/project/du-an-happy-land.jpg";
+
 
 // Carousel Data
 const carouselData = [
@@ -44,7 +47,7 @@ function Project() {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 2000,
     pauseOnHover: true,
     centerMode: true, // Enable partial visibility of next/previous slides
     centerPadding: "15%", // Show a portion of the next/previous slide
@@ -70,7 +73,7 @@ function Project() {
               Một số dự án tiêu biểu
             </h1>
             <p className="text-gray-600 font-['Quicksand'] mt-2 text-lg md:text-xl">
-              Các dự án tiêu biểu của Việt Tín, ngoài ra còn nhiều dự án khác
+              Các dự án tiêu biểu của Việt Tín về thẩm định giá BĐS và thẩm định giá trị Doanh Nghiệp, ngoài ra còn nhiều dự án khác
               chưa được đề cập đến!
             </p>
           </div>
@@ -81,10 +84,11 @@ function Project() {
               {carouselData.map((slide) => (
                 <div key={slide.id} className="px-4">
                   <div className="flex flex-col items-center justify-center bg-gray-100 rounded-lg shadow-lg p-6">
-                    <img
+                    <LazyLoadImage
                       src={slide.imageUrl}
                       alt={slide.name}
-                      className="rounded-lg w-full h-full object-cover mb-4"
+                      className="rounded-lg w-full h-full object-contain mb-4"
+                      loading="lazy"
                     />
                     <p className="font-['Quicksand'] text-xl font-bold text-gray-800">
                       {slide.name}
