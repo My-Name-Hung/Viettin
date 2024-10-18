@@ -15,10 +15,10 @@ app.use(
 );
 
 // Google Sheets API setup
-const SCOPES = ["https://www.googleapis.com/auth/spreadsheets"];
+
 const auth = new google.auth.GoogleAuth({
   keyFile: "./key_sheet.json", // Replace with the path to your Google service account key
-  scopes: SCOPES,
+  scopes: ["https://www.googleapis.com/auth/spreadsheets"],
 });
 const sheets = google.sheets({ version: "v4", auth });
 
@@ -36,7 +36,7 @@ const transporter = nodemailer.createTransport({
 const sendEmailNotification = (formData) => {
   const mailOptions = {
     from: process.env.EMAIL_USER, // Sender address
-    to: "support@viettinvaluation@gmail.com", // The recipient's email (configured in .env or hardcoded)
+    to: "nthung.viettin@gmail.com", // The recipient's email (configured in .env or hardcoded)
     subject: "Yêu cầu sử dụng dịch vụ Việt Tín", // Subject line
     text: `
       Có một yêu cầu sử dụng dịch vụ mới được ghi nhận tại sheet:https://docs.google.com/spreadsheets/d/1IUQWT6O_6KyZ2VlXPnb1i8iw1tSR9j8UnR0QR5iAvaI/edit?gid=0#gid=0
