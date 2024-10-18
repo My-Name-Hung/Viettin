@@ -17,7 +17,7 @@ app.use(
 // Google Sheets API setup
 const SCOPES = ["https://www.googleapis.com/auth/spreadsheets"];
 const auth = new google.auth.GoogleAuth({
-  keyFile: "./mythic-veld-412903-9a1709d84126.json", // Replace with the path to your Google service account key
+  keyFile: "../mythic-veld-412903-9a1709d84126.json", // Replace with the path to your Google service account key
   scopes: SCOPES,
 });
 const sheets = google.sheets({ version: "v4", auth });
