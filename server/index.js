@@ -1,66 +1,96 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const { Pool } = require("pg");
+const cors = require("cors");
+const { google } = require("googleapis");
+const nodemailer = require("nodemailer");
 require("dotenv").config();
 
-// Initialize Express app
 const app = express();
 app.use(bodyParser.json());
 
-const cors = require("cors");
 app.use(
   cors({
-    origin: ["https://viettin.netlify.app", "http://localhost:5173"], // Vite dev server URL
+    origin: ["https://viettin.netlify.app", "http://localhost:5173"],
   })
 );
 
-// PostgreSQL connection pool
-const pool = new Pool({
-  user: process.env.POSTGRES_USER,
-  password: process.env.POSTGRES_PASSWORD,
-  host: process.env.POSTGRES_HOST,
-  port: process.env.POSTGRES_PORT,
-  database: process.env.POSTGRES_DB,
+// Google Sheets API setup
+const SCOPES = ["https://www.googleapis.com/auth/spreadsheets"];
+const auth = new google.auth.GoogleAuth({
+  keyFile: "./key_sheet.json", // Replace with the path to your Google service account key
+  scopes: SCOPES,
+});
+const sheets = google.sheets({ version: "v4", auth });
+
+const SPREADSHEET_ID = process.env.SHEET_ID; // Replace with your Google Sheet ID
+
+// Nodemailer setup
+const transporter = nodemailer.createTransport({
+  service: "gmail", // You can use other services too, such as Yahoo, Outlook, etc.
+  auth: {
+    user: process.env.EMAIL_USER, // Your email address (configured in .env)
+    pass: process.env.EMAIL_PASS, // Your email password or app-specific password (configured in .env)
+  },
 });
 
-// API endpoint to handle the form submission
+const sendEmailNotification = (formData) => {
+  const mailOptions = {
+    from: process.env.EMAIL_USER, // Sender address
+    to: "support@viettinvaluation@gmail.com", // The recipient's email (configured in .env or hardcoded)
+    subject: "Yêu cầu sử dụng dịch vụ Việt Tín", // Subject line
+    text: `
+      Có một yêu cầu sử dụng dịch vụ mới được ghi nhận tại sheet:https://docs.google.com/spreadsheets/d/1IUQWT6O_6KyZ2VlXPnb1i8iw1tSR9j8UnR0QR5iAvaI/edit?gid=0#gid=0
+
+      Full Name: ${formData.fullName}
+      Phone Number: ${formData.phoneNumber}
+      Email: ${formData.email}
+      Request Details: ${formData.requestDetails || "No details provided"}
+    `,
+  };
+
+  // Send email
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      console.log("Error sending email:", error);
+    } else {
+      console.log("Email sent successfully:", info.response);
+    }
+  });
+};
+
 app.post("/api/appraisal-request", async (req, res) => {
-  const { fullName, email, phoneNumber, requestDetails } = req.body; // Updated field names
+  const { fullName, email, phoneNumber, requestDetails } = req.body;
 
   try {
-    // Insert data into the PostgreSQL database (updated field names)
-    const result = await pool.query(
-      "INSERT INTO appraisal_requests (full_name, email, phone_number, request_details) VALUES ($1, $2, $3, $4) RETURNING *",
-      [fullName, email, phoneNumber, requestDetails]
-    );
+    // Append the data to the Google Sheet
+    const request = {
+      spreadsheetId: SPREADSHEET_ID,
+      range: "Sheet1!A:D", // Adjust range based on your sheet structure
+      valueInputOption: "RAW",
+      insertDataOption: "INSERT_ROWS",
+      resource: {
+        values: [
+          [fullName, phoneNumber, email, requestDetails], // Order matches the columns in your sheet
+        ],
+      },
+    };
+
+    await sheets.spreadsheets.values.append(request);
+
+    // Send email notification
+    sendEmailNotification({ fullName, phoneNumber, email, requestDetails });
 
     res.status(200).json({
-      message: "Request saved successfully",
-      data: result.rows[0],
+      message: "Request saved successfully and email notification sent.",
     });
   } catch (error) {
-    console.error("Error saving request:", error);
+    console.error("Error:", error);
     res.status(500).json({
       message: "Internal Server Error",
-      error: error.message, // Include error message for debugging on frontend
+      error: error.message,
     });
   }
 });
-
-// // API endpoint to fetch all branches with details
-// app.get("/api/branches", async (req, res) => {
-//   try {
-//     const result = await pool.query("SELECT * FROM CN"); // Fetch all branches from 'CN' table
-//     res.status(200).json(result.rows); // Send the branch data as a JSON response
-//   } catch (error) {
-//     console.error("Error fetching branches:", error);
-//     res.status(500).json({
-//       message: "Internal Server Error",
-//       error: error.message,
-//     });
-//   }
-// });
-
 
 // Start server
 const PORT = process.env.PORT || 5000;
