@@ -77,7 +77,7 @@ function Section5() {
           {/* Image based on selected language */}
           {language === "Vietnam" && (
             <Link
-              href="https://publuu.com/flip-book/664205/1479718"
+              href="https://publuu.com/flip-book/690701/1536508"
               target="_blank"
             >
               <Image
@@ -85,12 +85,11 @@ function Section5() {
                 loading="lazy"
                 className="responsive-image md:h-[32rem] border-gray-400 border rounded-lg shadow-xl mt-4"
               />
-              
             </Link>
           )}
           {language === "English" && (
             <Link
-              href="https://publuu.com/flip-book/664205/1480035"
+              href="https://publuu.com/flip-book/690701/1536510"
               target="_blank"
             >
               <Image
@@ -102,7 +101,7 @@ function Section5() {
           )}
           {language === "Korea" && (
             <Link
-              href="https://publuu.com/flip-book/664205/1480040"
+              href="https://publuu.com/flip-book/690701/1536513"
               target="_blank"
             >
               <Image

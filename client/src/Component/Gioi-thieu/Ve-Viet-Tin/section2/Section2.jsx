@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { ParallaxBanner } from "react-scroll-parallax";
-import "./Section2.css"
+import "./Section2.css";
 
 // Import assets
 import bgsection2 from "../../../../assets/AboutUs/bgsection2.jpg";
-import core from "../../../../assets/Core Values/core.png"
+import core from "../../../../assets/Core Values/core.png";
 
 function Section2() {
   // State to manage the active tab
@@ -16,8 +16,7 @@ function Section2() {
       "Bằng khát vọng hướng đến sự minh bạch – độc lập – khách quan trong công tác thẩm định giá cùng chiến lược phát triển chậm mà chắc, bền vững, Việt Tín hướng đến một thương hiệu hàng đầu thị trường.",
     mission:
       "Xây dựng thương hiệu Việt Tín trở thành công ty thẩm định giá có uy tín và được ưa thích nhất tại Việt Nam",
-    values:
-      <img src={core} className="h-full w-[80%]"/>,
+    values: <img src={core} className="h-full w-full" />,
   };
 
   return (

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-// Import assests
+// Import assets
 import background from "../../../assets/thank/Paper-background.jpg";
 
-// Import component
+// Import components
 import {
   Button,
   Input,
@@ -101,8 +101,9 @@ function Thank() {
     }
 
     try {
+      // Updated API call to save to Google Sheets via Node.js backend
       const response = await fetch(
-        "https://viettin-be.onrender.com/api/appraisal-request",
+        "http://localhost:5000/api/appraisal-request", // Update with your backend API URL
         {
           method: "POST",
           headers: {
@@ -153,8 +154,9 @@ function Thank() {
             </Parallax>
             <Parallax speed={-5} opacity={[0.7, 1]} translateY={[20, 0]}>
               <p className="font-['Quicksand'] px-2 mt-4 text-lg md:text-2xl text-white animate-fade-in-up delay-500">
-                Đáp ứng sự tin tưởng và ủng hộ của Quý khách hàng dành cho VietTin Valuation, Hội đồng Quản trị, Ban Giám đốc cùng toàn thể Cán
-                bộ nhân viên VietTin Valuation trân trọng gửi đến Quý khách
+                Đáp ứng sự tin tưởng và ủng hộ của Quý khách hàng dành cho
+                VietTin Valuation, Hội đồng Quản trị, Ban Giám đốc cùng toàn thể
+                Cán bộ nhân viên VietTin Valuation trân trọng gửi đến Quý khách
                 hàng lời cam kết về giữ vững và nâng cao chất lượng dịch vụ trên
                 chặng đường phát triển của VietTin Valuation.
               </p>
@@ -168,7 +170,11 @@ function Thank() {
               </Button>
 
               {/* The Modal component */}
-              <Modal className="h-[29rem]" isOpen={isOpen} onOpenChange={onOpenChange}>
+              <Modal
+                className="h-[29rem]"
+                isOpen={isOpen}
+                onOpenChange={onOpenChange}
+              >
                 <ModalContent>
                   {(onClose) => (
                     <>

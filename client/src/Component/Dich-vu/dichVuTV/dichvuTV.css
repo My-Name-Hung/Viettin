@@ -1,0 +1,66 @@
+.property-card-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.property-card-container:hover {
+  transform: scale(1.03);
+  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Title section */
+.card-title-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s ease;
+}
+
+/* Hovered Details Section */
+.card-details-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(13, 16, 23, 0.2);
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* When hovering over the card, hide the title section and show the details */
+.property-card-container:hover .card-title-section {
+  opacity: 0;
+}
+
+.property-card-container:hover .card-details-section {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Text and hover styling */
+.card-title-section h3 {
+  font-size: 38px;
+  color: #2648b5;
+  transition: color 0.3s ease;
+}
+
+.card-title-section:hover h3 {
+  color: #1d3a99;
+}
+
+.card-details-section p,
+.card-details-section h2 {
+  transition: all 0.3s ease;
+}
+
+
