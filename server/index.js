@@ -3,8 +3,9 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const { google } = require("googleapis");
 const nodemailer = require("nodemailer");
-require("dotenv").config();
 const cron = require("node-cron");
+const https = require("https");
+require("dotenv").config();
 
 const app = express();
 app.use(bodyParser.json());
@@ -18,34 +19,33 @@ app.use(
     ],
   })
 );
-cron.schedule("*/5 * * * *", () => {
-  // Google Sheets API setup
-  const SCOPES = ["https://www.googleapis.com/auth/spreadsheets"];
-  const auth = new google.auth.JWT(
-    process.env.CLIENT_EMAIL, // Service account email from JSON
-    null, // No key file required
-    process.env.PRIVATE_KEY.replace(/\\n/g, "\n"), // Handle newlines in private key
-    SCOPES
-  );
-  const sheets = google.sheets({ version: "v4", auth });
 
-  const SPREADSHEET_ID = process.env.SHEET_ID; // Replace with your Google Sheet ID
+// Google Sheets API setup
+const SCOPES = ["https://www.googleapis.com/auth/spreadsheets"];
+const auth = new google.auth.JWT(
+  process.env.CLIENT_EMAIL,
+  null,
+  process.env.PRIVATE_KEY.replace(/\\n/g, "\n"),
+  SCOPES
+);
+const sheets = google.sheets({ version: "v4", auth });
+const SPREADSHEET_ID = process.env.SHEET_ID;
 
-  // Nodemailer setup
-  const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
-    },
-  });
+// Nodemailer setup
+const transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
+  },
+});
 
-  const sendEmailNotification = (formData) => {
-    const mailOptions = {
-      from: process.env.EMAIL_USER,
-      to: "support@viettinvaluation.com",
-      subject: "Yêu cầu sử dụng dịch vụ Việt Tín",
-      text: `
+const sendEmailNotification = (formData) => {
+  const mailOptions = {
+    from: process.env.EMAIL_USER,
+    to: "support@viettinvaluation.com",
+    subject: "Yêu cầu sử dụng dịch vụ Việt Tín",
+    text: `
       Có một yêu cầu sử dụng dịch vụ mới được ghi nhận tại sheet: https://docs.google.com/spreadsheets/d/1IUQWT6O_6KyZ2VlXPnb1i8iw1tSR9j8UnR0QR5iAvaI/edit?gid=0#gid=0
 
       Full Name: ${formData.fullName}
@@ -53,75 +53,64 @@ cron.schedule("*/5 * * * *", () => {
       Email: ${formData.email}
       Request Details: ${formData.requestDetails || "No details provided"}
     `,
-    };
-
-    transporter.sendMail(mailOptions, (error, info) => {
-      if (error) {
-        console.log("Error sending email:", error);
-      } else {
-        console.log("Email sent successfully:", info.response);
-      }
-    });
   };
 
-  app.post("/api/appraisal-request", async (req, res) => {
-    const { fullName, email, phoneNumber, requestDetails } = req.body;
-
-    try {
-      const request = {
-        spreadsheetId: SPREADSHEET_ID,
-        range: "Sheet1!A:D",
-        valueInputOption: "RAW",
-        insertDataOption: "INSERT_ROWS",
-        resource: {
-          values: [[fullName, phoneNumber, email, requestDetails]],
-        },
-      };
-
-      await sheets.spreadsheets.values.append(request);
-      sendEmailNotification({ fullName, phoneNumber, email, requestDetails });
-
-      res.status(200).json({
-        message: "Request saved successfully and email notification sent.",
-      });
-    } catch (error) {
-      console.error("Error:", error);
-      res.status(500).json({
-        message: "Internal Server Error",
-        error: error.message,
-      });
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      console.log("Error sending email:", error);
+    } else {
+      console.log("Email sent successfully:", info.response);
     }
   });
+};
+
+app.post("/api/appraisal-request", async (req, res) => {
+  const { fullName, email, phoneNumber, requestDetails } = req.body;
+
+  try {
+    const request = {
+      spreadsheetId: SPREADSHEET_ID,
+      range: "Sheet1!A:D",
+      valueInputOption: "RAW",
+      insertDataOption: "INSERT_ROWS",
+      resource: {
+        values: [[fullName, phoneNumber, email, requestDetails]],
+      },
+    };
+
+    await sheets.spreadsheets.values.append(request);
+    sendEmailNotification({ fullName, phoneNumber, email, requestDetails });
+
+    res.status(200).json({
+      message: "Request saved successfully and email notification sent.",
+    });
+  } catch (error) {
+    console.error("Error:", error);
+    res.status(500).json({
+      message: "Internal Server Error",
+      error: error.message,
+    });
+  }
 });
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
 
-// speed run server
-const https = require("https");
-
-exports.handler = async (event, context) => {
+// Cron job to ping server every 15 minutes
+cron.schedule("*/5 * * * *", () => {
   const url = "https://viettin-server.onrender.com";
 
-  return new Promise((resolve, reject) => {
-    const req = https.get(url, (res) => {
+  https
+    .get(url, (res) => {
       if (res.statusCode === 200) {
-        resolve({
-          statusCode: 200,
-          body: "Server pinged successfully",
-        });
+        console.log("Server pinged successfully to prevent sleep.");
       } else {
-        reject(
-          new Error(`Server ping failed with status code: ${res.statusCode}`)
-        );
+        console.error(`Server ping failed with status code: ${res.statusCode}`);
       }
+    })
+    .on("error", (error) => {
+      console.error("Error pinging server:", error);
     });
-
-    req.on("error", (error) => {
-      reject(error);
-    });
-
-    req.end();
-  });
-};
+});
